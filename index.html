@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>reveal.js</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        input[type="text"] {
+            font-size: inherit; /* Inherit font size from parent element */
+        }
+        .dropdown-container {
+        display: inline-block; /* Display the dropdown inline with the text */
+        position: relative; /* Positioning context for dropdown */
+        width: auto; /* Set the width to auto to adjust based on content */
+    }
+
+    .dropdown {
+        width: 150px; /* Set a fixed width for the dropdown */
+    }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <!-- Fill in the Gap Slide -->
+        <section data-correct-answer="go around">
+            <p>Complete the sentence:</p>
+            <p>"We decided to <input type="text" id="go_around" placeholder="enter verb here" autocomplete="off"> the city to explore its hidden gems."</p>
+            <button onclick="submitAnswer('go_around')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="wonderful">
+            <p>"The view from the top of the mountain was absolutely <input type="text" id="wonderful" placeholder="enter adjective here" autocomplete="off">."</p>
+            <button onclick="submitAnswer('wonderful')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="camels">
+            <p>"This animal is often seen in the deserts and can store water in its body:  <input type="text" id="camels" placeholder="enter noun here" autocomplete="off">"</p>
+            <button onclick="submitAnswer('camels')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="fantastic">
+            <p>Which word means the same as "amazing"?</p>
+            <ul>
+                <li><label><input type="radio" name="amazing" value="fantastic"> Fantastic</label></li>
+                <li><label><input type="radio" name="amazing" value="ordinary"> Ordinary</label></li>
+                <li><label><input type="radio" name="amazing" value="boring"> Boring</label></li>
+                <li><label><input type="radio" name="amazing" value="dull"> Dull</label></li>
+            </ul>
+            <button onclick="submitAnswer('amazing')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="every_day">
+            <p>John studied English every day for a long time.</p>
+            <p>How frequently did John study English?</p>
+            <ul>
+                <li><label><input type="radio" name="long_time" value="since_last_week"> Since last week</label></li>
+                <li><label><input type="radio" name="long_time" value="every_day"> Every day</label></li>
+                <li><label><input type="radio" name="long_time" value="just_now"> Just now</label></li>
+                <li><label><input type="radio" name="long_time" value="on_weekends_only"> On weekends only</label></li>
+            </ul>
+            <button onclick="submitAnswer('long_time')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="mars">
+            <p>"Some planets are rocky like <input type="text" id="mars" placeholder="enter planet name here" autocomplete="off">."</p>
+            <button onclick="submitAnswer('mars')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="neptune">
+            <p>In the solar system, which planet is the furthest from Earth?</p>
+            <ul>
+                <li><label><input type="radio" name="neptune" value="mars"> Mars</label></li>
+                <li><label><input type="radio" name="neptune" value="venus"> Venus</label></li>
+                <li><label><input type="radio" name="neptune" value="jupiter"> Jupiter</label></li>
+                <li><label><input type="radio" name="neptune" value="neptune"> Neptune</label></li>
+            </ul>
+            <button onclick="submitAnswer('neptune')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="jupiter">
+            <p>"<input type="text" id="jupiter" placeholder="enter planet name here" autocomplete="off"> is the largest one."</p>
+            <button onclick="submitAnswer('jupiter')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="mercury">
+            <p>Which planet is closest to the Sun?</p>
+            <ul>
+                <li><label><input type="radio" name="mercury" value="saturn"> Saturn</label></li>
+                <li><label><input type="radio" name="mercury" value="venus"> Venus</label></li>
+                <li><label><input type="radio" name="mercury" value="earth"> Earth</label></li>
+                <li><label><input type="radio" name="mercury" value="mercury"> Mercury</label></li>
+            </ul>
+            <button onclick="submitAnswer('mercury')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="liquid">
+            <p>"Water is a common <input type="text" id="liquid" placeholder="enter word here" autocomplete="off">."</p>
+            <button onclick="submitAnswer('liquid')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="clear">
+            <p>"The sky was <input type="text" id="clear" placeholder="enter word here" autocomplete="off"> and blue on a sunny day."</p>
+            <button onclick="submitAnswer('clear')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="drops">
+            <p>"Rain falls from the sky in tiny <input type="text" id="drops" placeholder="enter word here" autocomplete="off">."</p>
+            <button onclick="submitAnswer('drops')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="cell">
+            <p>"The basic unit of life is the <input type="text" id="cell" placeholder="enter word here" autocomplete="off">."</p>
+            <button onclick="submitAnswer('cell')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="thousand">
+            <p>"A millennium is a period of one <input type="text" id="thousand" placeholder="enter word here" autocomplete="off"> years."</p>
+            <button onclick="submitAnswer('thousand')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="doing exercise">
+            <p>"He felt more energetic after <input type="text" id="exercise" placeholder="enter word here" autocomplete="off"> in the morning."</p>
+            <button onclick="submitAnswer('exercise')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="microbes">
+            <p>"<input type="text" id="microbes" placeholder="enter word here" autocomplete="off"> are tiny organisms that are too small to be seen without a microscope."</p>
+            <button onclick="submitAnswer('microbes')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="thousand">
+            <p>The city had a population of several <input type="text" id="thousand" placeholder="enter word here" autocomplete="off"> people.</p>
+            <button onclick="submitAnswer('thousand')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="drops">
+        
+            <p>She put a few <input type="text" id="drops" placeholder="enter word here" autocomplete="off"> of lemon juice into her tea.</p>
+            <button onclick="submitAnswer('drops')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="pump">
+            <p>"You need to <input type="text" id="pump" placeholder="enter word here" autocomplete="off"> the bicycle tires before you ride."</p>
+            <button onclick="submitAnswer('pump')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="doing exercise">
+            <p>"<input type="text" id="doing exercise" placeholder="enter word here" autocomplete="off"> regularly can improve your overall health."</p>
+            <button onclick="submitAnswer('doing exercise')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="pumps">
+            <p>"The heart <input type="text" id="pumps" placeholder="enter word here" autocomplete="off"> blood throughout the body."</p>
+            <button onclick="submitAnswer('pumps')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="clear">
+            <p>"Please make sure the path is <input type="text" id="clear" placeholder="enter word here" autocomplete="off"> of obstacles before walking."</p>
+            <button onclick="submitAnswer('clear')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="pump">
+            <p>A <input type="text" id="pump" placeholder="enter word here" autocomplete="off"> is a device that moves fluids.</p>
+            <button onclick="submitAnswer('pump')">Submit</button>
+        </section>
+        <section data-correct-answer="healthy">
+            <p>"strong and well
+            He is a <span class="dropdown-container">
+                <select id="healthy" class="dropdown">
+                    <option value="strong">strong</option>
+                    <option value="well">well</option>
+                    <option value="good">good</option>
+                    <option value="healthy">healthy</option>
+                </select>
+            </span> boy."</p>
+            <button onclick="submitDropdownAnswer('healthy')">Submit</button>
+        </section>
+        <section data-correct-answer="defend">
+            <p>"The security system effectively <span class="dropdown-container">
+                <select id="defend" class="dropdown">
+                    <option value="collect">collect</option>
+                    <option value="destroy">destroy</option>
+                    <option value="defend">defend</option>
+                    <option value="build">build</option>
+                </select>
+            </span> the building from intruders"</p>
+            <button onclick="submitDropdownAnswer('defend')">Submit</button>
+        </section>
+        <section data-correct-answer="carry">
+            <p>"The passengers usualy <span class="dropdown-container">
+                <select id="carry" class="dropdown">
+                    <option value="throw">throw</option>
+                    <option value="carry">carry</option>
+                    <option value="hide">hide</option>
+                    <option value="swim">swim</option>
+                </select>
+            </span> their luggages themselves."</p>
+            <button onclick="submitDropdownAnswer('carry')">Submit</button>
+        </section>
+        <section data-correct-answer="collect">
+            <p>"The volunteers <span class="dropdown-container">
+                <select id="collect" class="dropdown">
+                    <option value="collect">collect</option>
+                    <option value="burn">burn</option>
+                    <option value="buy">buy</option>
+                    <option value="cook">cook</option>
+                </select>
+            </span> donations for the charity event."</p>
+            <button onclick="submitDropdownAnswer('collect')">Submit</button>
+        </section>
+        
+        <section>
+            <p style="font-size: 26px;">
+                A Wonderful Liquid <br>
+The human body is a real wonder. It is sometimes good to think about
+our body and how it works. Our body is doing millions of jobs all the
+time. <br>
+One of the most important parts of the body is blood. The heart
+pumps this red liquid around the body. This keeps us healthy and alive.
+More than half of blood is plasma. This is a clear and yellow liquid.
+It carries red and white cells. There are millions of red blood cells
+in one small drop of blood. They carry oxygen round the body and
+collect carbon dioxide from body parts. There are thousands of white
+cells in a drop of blood. They are bigger than red cells. They defend
+our body against microbes. <br>
+This wonderful liquid is a great gift from Allah. We can thank Allah
+by keeping our body healthy. One way to do that is eating healthy food
+and doing daily exercises. Another way is to donate our blood to those
+who need it.
+            </p>
+        </section>
+        <section data-correct-answer="a">
+            <p>What is the main function of red blood cells?</p>
+            <ul>
+                <li><label><input type="radio" name="red_blood_cells" value="a"> Carry oxygen round the body</label></li>
+                <li><label><input type="radio" name="red_blood_cells" value="b"> Defend the body against microbes</label></li>
+                <li><label><input type="radio" name="red_blood_cells" value="c"> Pump blood around the body</label></li>
+                <li><label><input type="radio" name="red_blood_cells" value="d"> Collect carbon dioxide from body parts</label></li>
+            </ul>
+            <button onclick="submitAnswer('red_blood_cells')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="b">
+            <p>What is the main function of white blood cells?</p>
+            <ul>
+                <li><label><input type="radio" name="white_blood_cells" value="a"> Carry oxygen round the body</label></li>
+                <li><label><input type="radio" name="white_blood_cells" value="b"> Defend the body against microbes</label></li>
+                <li><label><input type="radio" name="white_blood_cells" value="c"> Pump blood around the body</label></li>
+                <li><label><input type="radio" name="white_blood_cells" value="d"> Collect carbon dioxide from body parts</label></li>
+            </ul>
+            <button onclick="submitAnswer('white_blood_cells')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="c">
+            <p>What is the main component of blood plasma?</p>
+            <ul>
+                <li><label><input type="radio" name="blood_plasma" value="a"> Red blood cells</label></li>
+                <li><label><input type="radio" name="blood_plasma" value="b"> White blood cells</label></li>
+                <li><label><input type="radio" name="blood_plasma" value="c"> Clear and yellow liquid</label></li>
+                <li><label><input type="radio" name="blood_plasma" value="d"> Oxygen</label></li>
+            </ul>
+            <button onclick="submitAnswer('blood_plasma')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="false">
+            <p>Blood is a clear and yellow liquid.</p>
+            <ul>
+                <li><label><input type="radio" name="blood_clear" value="true"> True</label></li>
+                <li><label><input type="radio" name="blood_clear" value="false"> False</label></li>
+            </ul>
+            <button onclick="submitAnswer('blood_clear')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="false">
+            <p>White blood cells collect carbon dioxide from body parts.</p>
+            <ul>
+                <li><label><input type="radio" name="white_blood_collect" value="true"> True</label></li>
+                <li><label><input type="radio" name="white_blood_collect" value="false"> False</label></li>
+            </ul>
+            <button onclick="submitAnswer('white_blood_collect')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="true">
+            <p>Donating blood is a way to thank Allah.</p>
+            <ul>
+                <li><label><input type="radio" name="donating_blood" value="true"> True</label></li>
+                <li><label><input type="radio" name="donating_blood" value="false"> False</label></li>
+            </ul>
+            <button onclick="submitAnswer('donating_blood')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="plasma">
+            <p>"More than half of blood is _________."</p>
+            <input type="text" id="blood_component" placeholder="enter word here" autocomplete="off">
+            <button onclick="submitAnswer('blood_component')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="drop">
+            <p>"There are millions of red blood cells in one small _________ of blood."</p>
+            <input type="text" id="red_blood_cells_amount" placeholder="enter word here" autocomplete="off">
+            <button onclick="submitAnswer('red_blood_cells_amount')">Submit</button>
+        </section>
+        
+        <section data-correct-answer="defend">
+            <p>"White cells _________ our body against microbes."</p>
+            <input type="text" id="white_blood_cells_defend" placeholder="enter word here" autocomplete="off">
+            <button onclick="submitAnswer('white_blood_cells_defend')">Submit</button>
+        </section>
+        
+        <!-- Fill in the Gap Questions -->
+<!-- Fill in the Gap Questions -->
+<section data-correct-answer="taller">
+    <p>"John is <input type="text" id="taller" placeholder="enter word here" autocomplete="off"> than his brother.(tall)"</p>
+    <button onclick="submitAnswer('taller')">Submit</button>
+</section>
+
+<section data-correct-answer="bigger">
+    <p>"This box is <input type="text" id="bigger" placeholder="enter word here" autocomplete="off"> than that one.(big)"</p>
+    <button onclick="submitAnswer('bigger')">Submit</button>
+</section>
+
+<section data-correct-answer="younger">
+    <p>"Sarah is <input type="text" id="younger" placeholder="enter word here" autocomplete="off"> than Mark.(young)"</p>
+    <button onclick="submitAnswer('younger')">Submit</button>
+</section>
+
+<section data-correct-answer="more modern">
+    <p>"This smartphone is <input type="text" id="more_modern" placeholder="enter word here" autocomplete="off"> than the old one."</p>
+    <button onclick="submitAnswer('more_modern')">Submit</button>
+</section>
+
+<section data-correct-answer="older">
+    <p>"My grandmother is <input type="text" id="older" placeholder="enter word here" autocomplete="off"> than my grandfather.(old)"</p>
+    <button onclick="submitAnswer('older')">Submit</button>
+</section>
+
+<section data-correct-answer="smaller">
+    <p>"The toy car is <input type="text" id="smaller" placeholder="enter word here" autocomplete="off"> than the real car."</p>
+    <button onclick="submitAnswer('smaller')">Submit</button>
+</section>
+
+<section data-correct-answer="longer">
+    <p>"The Nile River is <input type="text" id="longer" placeholder="enter word here" autocomplete="off"> than the Amazon River."</p>
+    <button onclick="submitAnswer('longer')">Submit</button>
+</section>
+
+<section data-correct-answer="shorter">
+    <p>"This movie is <input type="text" id="shorter" placeholder="enter word here" autocomplete="off"> than the previous one.(short)"</p>
+    <button onclick="submitAnswer('shorter')">Submit</button>
+</section>
+
+<section data-correct-answer="braver">
+    <p>"The firefighter is <input type="text" id="braver" placeholder="enter word here" autocomplete="off"> than the police officer.(brave)"</p>
+    <button onclick="submitAnswer('braver')">Submit</button>
+</section>
+
+<section data-correct-answer="kinder">
+    <p>"Samantha is <input type="text" id="kinder" placeholder="enter word here" autocomplete="off"> than her sister.(kind)"</p>
+    <button onclick="submitAnswer('kinder')">Submit</button>
+</section>
+
+<section data-correct-answer="larger">
+    <p>"The elephant is <input type="text" id="larger" placeholder="enter word here" autocomplete="off"> than the giraffe."</p>
+    <button onclick="submitAnswer('larger')">Submit</button>
+</section>
+
+
+    <!-- Multiple Choice Questions -->
+    <section data-correct-answer="fastest">
+        <p>Which cheetah is the _______?</p>
+        <ul>
+            <li><label><input type="radio" name="fastest" value="fastest"> Fastest</label></li>
+            <li><label><input type="radio" name="fastest" value="faster"> Faster</label></li>
+            <li><label><input type="radio" name="fastest" value="fast"> Fast</label></li>
+            <li><label><input type="radio" name="fastest" value="more fast"> More fast</label></li>
+        </ul>
+        <button onclick="submitAnswer('fastest')">Submit</button>
+    </section>
+
+    <section data-correct-answer="best">
+        <p>Which restaurant serves the _______ food in town?</p>
+        <ul>
+            <li><label><input type="radio" name="best" value="better"> Better</label></li>
+            <li><label><input type="radio" name="best" value="best"> Best</label></li>
+            <li><label><input type="radio" name="best" value="goodest"> Goodest</label></li>
+            <li><label><input type="radio" name="best" value="more good"> More good</label></li>
+        </ul>
+        <button onclick="submitAnswer('best')">Submit</button>
+    </section>
+
+    <section data-correct-answer="worst">
+        <p>Which option is the _______ one?</p>
+        <ul>
+            <li><label><input type="radio" name="worst" value="worse"> Worse</label></li>
+            <li><label><input type="radio" name="worst" value="worst"> Worst</label></li>
+            <li><label><input type="radio" name="worst" value="badder"> Badder</label></li>
+            <li><label><input type="radio" name="worst" value="more bad"> More bad</label></li>
+        </ul>
+        <button onclick="submitAnswer('worst')">Submit</button>
+    </section>
+
+    <section data-correct-answer="farthest">
+        <p>Which star is the _______ from Earth?</p>
+        <ul>
+            <li><label><input type="radio" name="farthest" value="far"> Far</label></li>
+            <li><label><input type="radio" name="farthest" value="farest"> Farest</label></li>
+            <li><label><input type="radio" name="farthest" value="farther"> Farther</label></li>
+            <li><label><input type="radio" name="farthest" value="farthest"> Farthest</label></li>
+        </ul>
+        <button onclick="submitAnswer('farthest')">Submit</button>
+    </section>
+
+    <section data-correct-answer="most">
+        <p>Which choice requires the _______ effort?</p>
+        <ul>
+            <li><label><input type="radio" name="most" value="more"> More</label></li>
+            <li><label><input type="radio" name="most" value="most"> Most</label></li>
+            <li><label><input type="radio" name="most" value="much"> Much</label></li>
+            <li><label><input type="radio" name="most" value="many"> Many</label></li>
+        </ul>
+        <button onclick="submitAnswer('most')">Submit</button>
+    </section>
+
+    <section data-correct-answer="many">
+        <p>How _______ people attended the concert?</p>
+        <ul>
+            <li><label><input type="radio" name="many" value="much"> Much</label></li>
+            <li><label><input type="radio" name="many" value="many"> Many</label></li>
+            <li><label><input type="radio" name="many" value="more"> More</label></li>
+            <li><label><input type="radio" name="many" value="most"> Most</label></li>
+        </ul>
+        <button onclick="submitAnswer('many')">Submit</button>
+    </section>
+
+    <section data-correct-answer="easier">
+        <p>Which task is _______ to complete?</p>
+        <ul>
+            <li><label><input type="radio" name="easier" value="easy"> Easy</label></li>
+            <li><label><input type="radio" name="easier" value="easiest"> Easiest</label></li>
+            <li><label><input type="radio" name="easier" value="easier"> Easier</label></li>
+            <li><label><input type="radio" name="easier" value="most easy"> Most easy</label></li>
+        </ul>
+        <button onclick="submitAnswer('easier')">Submit</button>
+    </section>
+
+    <section data-correct-answer="cloudier">
+        <p>Today's weather is _______ than yesterday's.</p>
+        <ul>
+            <li><label><input type="radio" name="cloudier" value="cloudy"> Cloudy</label></li>
+            <li><label><input type="radio" name="cloudier" value="cloudiest"> Cloudiest</label></li>
+            <li><label><input type="radio" name="cloudier" value="cloudier"> Cloudier</label></li>
+            <li><label><input type="radio" name="cloudier" value="more cloudy"> More cloudy</label></li>
+        </ul>
+        <button onclick="submitAnswer('cloudier')">Submit</button>
+    </section>
+
+<!-- Drop Down Menu Questions -->
+<section data-correct-answer="hottest">
+    <p>"Today is the <span class="dropdown-container">
+        <select id="hottest" class="dropdown">
+            <option value="cold">cold</option>
+            <option value="hot">hot</option>
+            <option value="hottest">hottest</option>
+            <option value="warmer">warmer</option>
+        </select>
+    </span> day of the year."</p>
+    <button onclick="submitDropdownAnswer('hottest')">Submit</button>
+</section>
+
+<section data-correct-answer="bluest">
+    <p>"The sky is the <span class="dropdown-container">
+        <select id="bluest" class="dropdown">
+            <option value="blue">blue</option>
+            <option value="bluer">bluer</option>
+            <option value="bluest">bluest</option>
+            <option value="clear">clear</option>
+        </select>
+    </span> it has ever been."</p>
+    <button onclick="submitDropdownAnswer('bluest')">Submit</button>
+</section>
+
+<section data-correct-answer="easiest">
+    <p>"This is the <span class="dropdown-container">
+        <select id="easiest" class="dropdown">
+            <option value="hard">hard</option>
+            <option value="easy">easy</option>
+            <option value="easier">easier</option>
+            <option value="easiest">easiest</option>
+        </select>
+    </span> task."</p>
+    <button onclick="submitDropdownAnswer('easiest')">Submit</button>
+</section>
+
+<section data-correct-answer="angriest">
+    <p>"She looked the <span class="dropdown-container">
+        <select id="angriest" class="dropdown">
+            <option value="angry">angry</option>
+            <option value="angrier">angrier</option>
+            <option value="angriest">angriest</option>
+            <option value="happy">happy</option>
+        </select>
+    </span> I've ever seen her."</p>
+    <button onclick="submitDropdownAnswer('angriest')">Submit</button>
+</section>
+
+<section data-correct-answer="strongest">
+    <p>"The lion is the <span class="dropdown-container">
+        <select id="strongest" class="dropdown">
+            <option value="weak">weak</option>
+            <option value="strong">strong</option>
+            <option value="stronger">stronger</option>
+            <option value="strongest">strongest</option>
+        </select>
+    </span> animal in the jungle."</p>
+    <button onclick="submitDropdownAnswer('strongest')">Submit</button>
+</section>
+
+
+
+        
+
+        
+                                
+    </div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    let userAnswers = {};
+
+    function submitAnswer(questionId) {
+        let userInput;
+        if (document.getElementById(questionId)) {
+            userInput = document.getElementById(questionId).value;
+        } else {
+            const radios = document.querySelectorAll(`input[name="${questionId}"]:checked`);
+            if (!radios.length) {
+                alert('Please select an answer.');
+                return;
+            }
+            userInput = radios[0].value;
+        }
+        const currentSlide = Reveal.getCurrentSlide();
+        const correctAnswer = currentSlide.getAttribute('data-correct-answer');
+
+        if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+            // Correct answer
+            alert('Correct!');
+        } else {
+            // Incorrect answer
+            alert('Incorrect!');
+        }
+
+        userAnswers[questionId] = userInput;
+        localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+
+        Reveal.next(); // Move to the next slide
+    }
+
+    function submitDropdownAnswer(questionId) {
+        const selectedOption = document.getElementById(questionId).value;
+        const currentSlide = Reveal.getCurrentSlide();
+        const correctAnswer = currentSlide.getAttribute('data-correct-answer');
+
+        if (selectedOption.toLowerCase() === correctAnswer.toLowerCase()) {
+            // Correct answer
+            alert('Correct!');
+        } else {
+            // Incorrect answer
+            alert('Incorrect!');
+        }
+
+        // Move to the next slide
+        Reveal.next();
+    }
+
+    Reveal.initialize({
+        hash: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+
+    Reveal.addEventListener('slidechanged', function(event) {
+        if (event.indexh === event.indexh && event.indexv === event.indexv) {
+            displayFeedback();
+        }
+    });
+</script>
+
+</body>
+</html>
